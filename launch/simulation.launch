@@ -1,0 +1,14 @@
+<launch>
+  <!-- 
+    Bu launch dosyası, turtlebot3_gazebo paketi içerisindeki 
+    hazır ev ortamını (turtlebot3_house.launch) başlatmak için kullanılır.
+  -->
+  
+  <!-- model argümanını burada açıkça waffle_pi olarak belirtiyoruz -->
+  <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
+
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch">
+    <!-- hangi robot modelinin kullanılacağını burada zorunlu kılıyoruz -->
+    <arg name="model" value="$(arg model)"/>
+  </include>
+</launch>

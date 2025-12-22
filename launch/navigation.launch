@@ -1,0 +1,20 @@
+<launch>
+  <!-- Temel argümanlar -->
+  <arg name="model" default="waffle_pi"/>
+  <arg name="map_file" default="$(find robot_supurge_ros)/maps/map.yaml"/>
+  <arg name="open_rviz" default="true"/>
+
+  <!-- TurtleBot3'ün kendi Gazebo launch dosyasını kullan -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <!-- TurtleBot3 Navigasyon Yığınını Başlat ve Parametreleri Üzerine Yaz -->
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+    <arg name="model" value="$(arg model)" />
+    <arg name="map_file" value="$(arg map_file)" />
+    <arg name="open_rviz" value="$(arg open_rviz)" />
+    <rosparam file="$(find robot_supurge_ros)/param/costmap_common_params_waffle.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_supurge_ros)/param/costmap_common_params_waffle.yaml" command="load" ns="local_costmap" />
+  </include>
+</launch>
