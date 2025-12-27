@@ -23,4 +23,11 @@
   <!-- Yazdığımız QR okuyucu Python script'ini bir düğüm olarak başlat -->
   <node name="qr_reader_node" pkg="robot_supurge_ros" type="qr_reader_node.py" output="screen" />
   
+  
+  <!-- Gorev Yoneticisi (Task Manager) dugumunu baslat -->
+  <node name="task_manager_node" pkg="robot_supurge_ros" type="task_manager_node.py" output="screen">
+    <!-- Python script'ine gorev dosyasinin nerede oldugunu soyle -->
+    <param name="mission_file" value="$(find robot_supurge_ros)/config/mission.yaml" />
+  </node>
+  
 </launch>
