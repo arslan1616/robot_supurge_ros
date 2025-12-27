@@ -1,0 +1,4 @@
+material QRCode/Kitchen
+{
+  technique { pass { texture_unit { texture kitchen_qr.png } } }
+}

@@ -1,36 +1,26 @@
 <launch>
+  <!-- Gazebo'ya bizim modellerimizin olduğu ANA klasörü tanıt -->
+  <env name="GAZEBO_MODEL_PATH" value="$(find robot_supurge_ros)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
   <arg name="model" default="waffle_pi"/>
   <arg name="map_file" default="$(find robot_supurge_ros)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
 
-  <!-- TurtleBot3 Gazebo'yu başlat -->
   <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch">
     <arg name="model" value="$(arg model)"/>
   </include>
 
-  <!-- TurtleBot3 Navigasyon'u başlat -->
   <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
     <arg name="model" value="$(arg model)" />
     <arg name="map_file" value="$(arg map_file)" />
     <arg name="open_rviz" value="$(arg open_rviz)" />
   </include>
-
-  <!-- =================================================================== -->
-  <!-- ===== SENİN İSTEDİĞİN GİBİ QR KODLARINI SPAWN ETME BÖLÜMÜ ====== -->
-  <!-- =================================================================== -->
-
-  <!-- Koridor QR Kodu (Tüm dönüşler sıfır) -->
-  <node name="spawn_qr_corridor" pkg="gazebo_ros" type="spawn_model" args="-database qr_code_corridor -sdf -model qr_code_corridor -x -5.189490 -y 2.125160 -z 0.0 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
   
-  <!-- Salon QR Kodu (Tüm dönüşler sıfır) -->
-  <node name="spawn_qr_livingroom" pkg="gazebo_ros" type="spawn_model" args="-database qr_code_livingroom -sdf -model qr_code_livingroom -x -0.110741 -y -0.093292 -z 0.0 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
-  
-  <!-- Mutfak QR Kodu (Tüm dönüşler sıfır) -->
-  <node name="spawn_qr_kitchen" pkg="gazebo_ros" type="spawn_model" args="-database qr_code_kitchen -sdf -model qr_code_kitchen -x 3.036290 -y -0.089789 -z 0.0 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
-  
-  <!-- Yatak Odası QR Kodu (Tüm dönüşler sıfır) -->
-  <node name="spawn_qr_bedroom" pkg="gazebo_ros" type="spawn_model" args="-database qr_code_bedroom -sdf -model qr_code_bedroom -x 5.378350 -y -0.088100 -z 0.0 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
-  
+  <node name="spawn_qr_corridor" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_supurge_ros)/models/qr_code_corridor/model.sdf -sdf -model qr_code_corridor -x -5.189 -y 2.125 -z 0.3 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
+  <node name="spawn_qr_livingroom" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_supurge_ros)/models/qr_code_livingroom/model.sdf -sdf -model qr_code_livingroom -x -0.110 -y -0.093 -z 0.3 -Y 0.0" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
+  <node name="spawn_qr_kitchen" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_supurge_ros)/models/qr_code_kitchen/model.sdf -sdf -model qr_code_kitchen -x 3.036 -y -0.089 -z 0.3 -Y 0.00" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
+  <node name="spawn_qr_bedroom" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_supurge_ros)/models/qr_code_bedroom/model.sdf -sdf -model qr_code_bedroom -x 4.991968 -y -0.861390 -z 0.3 -Y 1.545638" output="screen" launch-prefix="bash -c 'sleep 5.0; $0 $@' "/>
   <!-- Yazdığımız QR okuyucu Python script'ini bir düğüm olarak başlat -->
   <node name="qr_reader_node" pkg="robot_supurge_ros" type="qr_reader_node.py" output="screen" />
+  
 </launch>

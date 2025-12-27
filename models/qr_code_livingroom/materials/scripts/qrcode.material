@@ -1,0 +1,4 @@
+material QRCode/LivingRoom
+{
+  technique { pass { texture_unit { texture livingroom_qr.png } } }
+}

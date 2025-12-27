@@ -1,0 +1,4 @@
+material QRCode/Corridor
+{
+  technique { pass { texture_unit { texture corridor_qr.png } } }
+}
