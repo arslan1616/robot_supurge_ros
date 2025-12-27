@@ -1,8 +1,8 @@
 rooms:
   - name: 'salon'
     entry_pose:
-      position: {x: -0.01465, y: 0.4184, z: 0.0}
-    orientation: {x: 0.0, y: 0.0, z: -0.9998, w: 0.0175}
+      position: {x: -0.09378, y: 0.3207, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: -0.7302, w: 0.6831}
     cleaning_poses:
       - {position: {x: -0.5688, y: 4.778, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9997, w: 0.0210}}
       - {position: {x: -4.725, y: 0.225, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.01096, w: 0.9999}}
@@ -11,8 +11,8 @@ rooms:
 
   - name: 'mutfak'
     entry_pose:
-      position: {x: 2.2317, y: 0.4571, z: 0.0}
-      orientation: {x: 0.0, y: 0.0, z: 0.0175, w: 0.99984}
+      position: {x: 2.9723, y: 0.3189, z: 0.0}
+      orientation: {x: 0.0, y: 0.0, z: -0.7321, w: 0.6811}
     cleaning_poses:
       - {position: {x: 7.026, y: 4.909, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.955, w: 0.296}}
       - {position: {x: 2.776, y: 4.762, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.696, w: 0.717}}
@@ -21,8 +21,8 @@ rooms:
 
   - name: 'yatak_odasi'
     entry_pose:
-      position: {x: 6.1189, y: -0.211, z: 0.0}
-      orientation: {x: 0.0, y: 0.0, z: -0.6946, w: 0.7193}
+      position: {x: 5.2066, y: 0.3833, z: 0.0}
+      orientation: {x: 0.0, y: 0.0, z: -0.6689, w: 0.7433}
     cleaning_poses:
       - {position: {x: 6.966, y: -4.683, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.997, w: 0.072}}
       - {position: {x: 6.994, y: -2.400, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.827, w: 0.561}}
@@ -31,8 +31,8 @@ rooms:
     
   - name: 'koridor'
     entry_pose:
-      position: {x: -5.0108, y: 3.3638, z: 0.0}
-      orientation: {x: 0.0, y: 0.0, z: -0.9999, w: 0.005}
+      position: {x: 5.2066, y: 0.3833, z: 0.0}
+      orientation: {x: 0.0, y: 0.0, z: -0.6689, w: 0.7433}
     cleaning_poses:
       - {position: {x: 6.90, y: 4.303, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.6248, w: 0.7807}}
       - {position: {x: -6.3149, y: 1.6991, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.4004, w: 0.9162}}
