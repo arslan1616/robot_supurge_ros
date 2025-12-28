@@ -4,8 +4,8 @@ rooms:
       position: {x: -0.5028582635919718, y: 1.1324393128657901, z: 0.0}
       orientation: {x: 0.0, y: 0.0, z: -0.6172612726122724, w: 0.7867582356309198}
     cleaning_poses:
-      - {position: {x: -0.5688, y: 4.778, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9997, w: 0.0210}}
-      - {position: {x: -4.725, y: 0.225, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.01096, w: 0.9999}}
+      - {position: {x: -0.897130, y: 4.365372, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.999239, w: 0.0389844}}
+      - {position: {x: -4.040806, y: 1.05534, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0262687, w: 0.999654}}
       - {position: {x: -1.270, y: 1.740, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.402, w: 0.915}}
     qr_data: "ROOM=LIVINGROOM"
 
@@ -14,7 +14,7 @@ rooms:
       position: {x: 3.084359, y: 1.26407, z: 0.0}
       orientation: {x: 0.0, y: 0.0, z: -0.69738241, w: 0.71669922}
     cleaning_poses:
-      - {position: {x: 7.026, y: 4.909, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.955, w: 0.296}}
+      - {position: {x: 6.526557, y: 4.314357, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9963, w: 0.085851}}
       - {position: {x: 2.776, y: 4.762, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.696, w: 0.717}}
       - {position: {x: 6.848, y: 0.553, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.999, w: 0.003}}
     qr_data: "ROOM=KITCHEN"
@@ -24,9 +24,9 @@ rooms:
       position: {x: 6.3185174, y: -0.8659319, z: 0.0}
       orientation: {x: 0.0, y: 0.0, z: 0.999849, w: 0.01737191}
     cleaning_poses:
-      - {position: {x: 6.966, y: -4.683, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.997, w: 0.072}}
-      - {position: {x: 6.994, y: -2.400, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.827, w: 0.561}}
-      - {position: {x: 5.969, y: -0.439, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.695, w: 0.718}}
+      - {position: {x: 6.5147435, y: -4.13891644, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.9936445, w: 0.11256299}}
+      - {position: {x: 5.40510386, y: -2.439409, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.65912808, w: 0.75203069}}
+      - {position: {x: 6.0685311, y: -0.3033155, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.69935065, w: 0.71477874}}
     qr_data: "ROOM=BEDROOM"
     
   - name: 'koridor'
@@ -34,7 +34,7 @@ rooms:
       position: {x: -5.12784680, y: 3.5891537, z: 0.0}
       orientation: {x: 0.0, y: 0.0, z: -0.73645517, w: 0.67648634}
     cleaning_poses:
-      - {position: {x: 6.90, y: 4.303, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.6248, w: 0.7807}}
+      - {position: {x: -6.90, y: 4.303, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.6248, w: 0.7807}}
       - {position: {x: -6.3149, y: 1.6991, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.4004, w: 0.9162}}
       - {position: {x: -5.6052, y: 3.0345, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0161, w: 0.9998}}
     qr_data: "ROOM=CORRIDOR"

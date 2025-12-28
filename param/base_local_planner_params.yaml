@@ -6,15 +6,16 @@ TrajectoryPlannerROS:
 
   max_vel_theta:  1.0
   min_vel_theta: -1.0
-  min_in_place_vel_theta: 1.0
+  min_in_place_vel_theta: 0.4
 
   acc_lim_x: 1.0
   acc_lim_y: 0.0
-  acc_lim_theta: 0.6
+  acc_lim_theta: 0.4
 
 # Goal Tolerance Parameters
   xy_goal_tolerance: 0.15
   yaw_goal_tolerance: 0.20
+  latch_xy_goal_tolerance: false
 
 # Differential-drive robot configuration
   holonomic_robot: false

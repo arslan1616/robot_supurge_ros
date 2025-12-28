@@ -50,24 +50,38 @@ class TaskManager:
 
     def execute_recovery_behavior(self):
         """
-        [Gorev 5.1 & Iyilestirme]
-        Robot navigasyonda sıkısırsa veya hedefe gidemezse
-        kendi etrafinda donerek kurtulmaya calisir.
+        [Gelistirilmis Kurtarma]
+        Robot sikistiginda tek seferde hizlica donmek yerine;
+        Adim adim doner, durur ve haritanin guncellenmesini bekler.
+        Boylece 'sari yol' (plan) olusursa move_base bunu daha rahat gorur.
         """
-        rospy.logwarn("!!! NAVIGASYON SIKISTI !!! Kurtarma manevrasi: 360 derece donuluyor...")
-        msg = Twist()
-        msg.angular.z = 0.5 # Saniyede 0.5 radyan donus hizi
+        rospy.logwarn("!!! NAVIGASYON SIKISTI !!! Akilli Kurtarma: Adim adim donuluyor...")
         
-        # Yaklasik 12-13 saniye donerek tam tur atmasini sagla
-        rate = rospy.Rate(10)
-        for _ in range(125):
+        step_angle_speed = 0.4  # Donus hizi (yavas)
+        step_duration = 20      # Her adimda ne kadar donecegi (sure bazli)
+        wait_duration = 1.0     # Her donus sonrasi bekleme suresi (saniye)
+        
+        # 360 dereceyi parca parca donelim (Toplam 8 adim gibi)
+        # Robot her dondugunde durup etrafina bakacak.
+        for i in range(8):
             if rospy.is_shutdown(): break
-            self.cmd_vel_pub.publish(msg)
-            rate.sleep()
             
-        # Dur
-        self.cmd_vel_pub.publish(Twist())
-        rospy.loginfo("Kurtarma manevrasi bitti. Tekrar deneniyor...")
+            # 1. Adim: Biraz don
+            rospy.loginfo(f"Kurtarma Adimi {i+1}/8: Donuluyor...")
+            msg = Twist()
+            msg.angular.z = step_angle_speed
+            
+            rate = rospy.Rate(10)
+            for _ in range(step_duration): # Yaklasik 45 derece doner
+                self.cmd_vel_pub.publish(msg)
+                rate.sleep()
+                
+            # 2. Adim: DUR ve BEKLE (Costmap guncellensin, sari yol hesaplansin)
+            rospy.loginfo("-> Bekleniyor (Harita guncellemesi)...")
+            self.cmd_vel_pub.publish(Twist()) # Robotu durdur
+            rospy.sleep(wait_duration)
+            
+        rospy.loginfo("Kurtarma manevrasi tamamlandi. Gorev tekrar denenecek.")
 
     def search_for_qr_maneuver(self):
         """
