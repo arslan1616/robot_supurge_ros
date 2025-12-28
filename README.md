@@ -76,10 +76,17 @@ Robotun davranış mimarisi `task_manager_node.py` içerisinde bir durum makines
 
 *(Aşağıdaki görselde robotun Gazebo ortamında QR kodu başarıyla tespit ettiği an görülmektedir)*
 4. **Temizlik (Cleaning):** Doğrulama başarılı ise robot odaya girer ve tanımlanmış alt hedefleri (waypoint) sırayla gezerek temizlik simülasyonunu tamamlar.
+
+
 <img width="1281" height="935" alt="image" src="https://github.com/user-attachments/assets/f459692f-ac6c-406c-9aed-6ae783561f43" />
 
 
 5. **Raporlama:** Tüm odalar tamamlandığında sistem terminal üzerinden hangi odaların başarıyla tamamlandığını, hangilerinin atlandığını raporlar.
+
+   
+<img width="1247" height="950" alt="image" src="https://github.com/user-attachments/assets/649d3e27-2cb8-455b-87e6-1d1eb9301eef" />
+
+   
 
 ## 6. Dosya Yapısı
 
