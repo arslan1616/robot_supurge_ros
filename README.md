@@ -1,4 +1,4 @@
-```markdown
+
 # Süpürge Robotu Projesi: Oda Bazlı Temizlik ve QR Doğrulama
 
 **Hazırlayan:** İbrahim Arslan
